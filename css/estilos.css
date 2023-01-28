@@ -1,0 +1,930 @@
+
+    /* reset */
+*{
+    margin: 0;
+    padding: 0;
+box-sizing: border-box;
+}
+
+/* estilo de la letra */
+h1, h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+} 
+
+h4{
+    font-size: 2.5em;
+}
+ 
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    margin-top: 150px;
+    font-size: 4em;
+}
+
+.tienda-online{
+    font-size: 1.3em; 
+}
+
+.fashion{
+    display: flex;
+    height: 20px;
+margin-left: 60px;
+align-items: center;
+}
+
+/* fondo */
+
+.fondo{
+    background-image: url(../img/fondo.jpg);
+    height: 2000px;
+}
+
+/* menu principal */
+
+header{
+  background-color:rgb(245, 255, 250);
+    display: flex;
+    justify-content:  space-between;
+    padding: 30px;
+    background-image: url(../img/perchero.jpg);
+    height: 400px;
+    background-repeat:  round;
+}
+.menu-1{background-color:none;
+    border-radius: 15px;
+    padding: 8px;
+   position: relative;
+   font-family: 'Roboto', sans-serif;
+   font-size: 1.1em; 
+ }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.estilo-1:hover{
+    background-color:#caaf99;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 10px 5px 20px;
+}
+
+/* estilo categoria */
+
+.categoria{
+text-align: center;
+    font-size: 2em;
+    padding: 40px;
+}
+
+.hombre-o-mujer{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+    
+}
+ 
+.hombre-p, .mujer-p{
+    font-size: 2em;
+   margin: 15px;
+}
+
+/* categoria imagen */
+
+.img-categoria-1:hover{
+    filter: drop-shadow(1px 1px 8px);
+}
+.img-categoria-2:hover{
+    filter: drop-shadow(1px 1px 8px);
+}
+
+.contenedor-categoria{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:auto ;
+    grid-template-areas: 
+    "img-categoria-1 img-categoria-2"
+    "hombre-p mujer-p";
+    justify-items: center;
+    text-align: center;
+   
+}
+
+.img-categoria-1{
+    grid-area:img-categoria-1 ;
+}
+
+.img-categoria-2{
+    grid-area: img-categoria-2;
+}
+
+.hombre-p{
+    grid-area: hombre-p; 
+}
+
+.mujer-p{
+    grid-area: mujer-p;  
+}
+
+/* estilo destacados */
+
+.destacados{
+    margin: 50px;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.destacado-camisa:hover{
+    filter: drop-shadow(1px 1px 8px);
+}
+.destacado-ropa-muejer:hover{
+    filter: drop-shadow(1px 1px 8px);
+}
+.destacado-ropa:hover{
+    filter: drop-shadow(1px 1px 8px);
+}
+
+.img-destacados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
+
+.img-div{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+    /* estilo de footer */
+footer{
+   padding: 15px;
+    margin: 50px;
+    text-align: center;  
+}
+
+.footer-h4{
+padding-bottom:35px;
+
+}
+
+.redes-inicio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+    
+/* imagenes productos */
+
+.img-prductos{
+    display: grid;
+   grid-template-columns:auto ;
+    grid-template-rows: auto ; 
+grid-template-areas: 
+"img-1 img-2 img-3 img-4"
+"img-5 img-16 img-6 img-7"
+"img-8 img-9 img-10 img-11"
+"img-12 img-13 img-14 img-15";
+gap: 20px;
+justify-content: center;
+
+}
+.img-1{
+   grid-area: img-1 ;  
+}
+.img-2{
+    grid-area: img-2 ;
+}
+.img-3{
+    grid-area: img-3 ;
+}
+.img-4{
+    grid-area: img-4 ;
+}
+.img-5{
+    grid-area: img-5 ;
+}
+.img-6{
+    grid-area: img-6 ;
+}
+.img-7{
+    grid-area: img-7 ;
+}
+.img-8{
+    grid-area: img-8 ;
+}
+.img-9{
+    grid-area: img-9 ;
+}
+.img-10{
+    grid-area: img-10 ;
+}
+.img-11{
+    grid-area: img-11 ;
+}
+.img-12{
+    grid-area: img-12 ;
+}
+.img-13{
+    grid-area: img-13 ;
+}
+.img-14{
+    grid-area: img-14 ;
+}
+.img-15{
+    grid-area: img-15 ; 
+ }
+ .img-16{
+    grid-area: img-16 ;
+ }
+
+/* nosotros */
+
+.nosotros-5{
+    display: flex;
+}
+
+.nosotros-1{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+
+.nosotros{
+display: flex;
+    margin: 20px;
+    padding: 15px;
+    
+}
+
+.video{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin: 30px;
+    margin-top: 110px;
+}
+
+/* contacto */
+ 
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  gap: 0.5px;
+}
+
+/* Ingresar */
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5px;
+}
+
+@media (min-width: 601px) and (max-width: 991.98px){
+
+    /* reset */
+    *{
+        margin: 0;
+        padding: 0;
+    box-sizing: border-box;
+    }
+    
+    /* estilo de la letra */
+    h1, h3{
+        font-family: 'Roboto', sans-serif;
+        font-size: 3em;
+    } 
+
+    h1{
+        position: relative;
+        margin-top: 100px;
+        font-size: 2em;
+    }
+
+h4{
+    font-size: 1.2em;
+}
+
+    .tienda-online{
+        font-size: 1.3em;  
+            position: relative;
+            bottom: 8px;
+            margin-right: 90px;
+        
+    }
+    
+    .fashion{
+        display: flex;
+        height: 20px;
+    margin-top: px;
+    margin-left: 25px;
+    }
+    
+    /* fondo */
+    
+    .fondo{
+        background-image: url(../img/fondo.jpg);
+        height: 1650px;
+    }
+    
+    /* menu principal */
+    
+    header{
+      background-color:rgb(245, 255, 250);
+        display: flex;
+        justify-content:  space-between;
+        padding: 30px;
+        background-image: url(../img/perchero.jpg);
+        background-size:cover;
+        height: 280px;
+    }
+    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .estilo-1:hover{
+        background-color:#caaf99;
+        border-radius: 15px;
+        padding: 5px;
+        box-shadow: 10px 5px 20px;
+    }
+    
+.menu-1{background-color:#caaf99;
+    border-radius: 15px;
+    padding: 8px;
+position: relative;
+margin-top: 38px;
+
+}
+        
+    /* estilo categoria */
+    
+    .categoria{
+    text-align: center;
+        font-size: 2em;
+        padding: 40px;
+    }
+    
+    .hombre-o-mujer{
+        margin: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly
+    }
+     
+    .hombre-p, .mujer-p{
+        font-size: 2em;
+       margin: 15px;
+    }
+    
+    /* categoria imagen */
+    
+    .img-categoria-1:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .img-categoria-2:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    
+    .contenedor-categoria{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows:auto ;
+        grid-template-areas: 
+        "img-categoria-1 img-categoria-2"
+        "hombre-p mujer-p";
+        justify-items: center;
+        text-align: center;
+       
+    }
+    .img-categoria-1{
+        grid-area:img-categoria-1 ;
+        width: 300px;
+    
+    }
+    
+    .img-categoria-2{
+        grid-area: img-categoria-2;
+        width: 300px;   
+    }
+    
+    .hombre-p{
+        grid-area: hombre-p; 
+    }
+    
+    .mujer-p{
+        grid-area: mujer-p;  
+    }
+    
+    /* estilo destacados */
+    
+    .destacados{
+        margin: 50px;
+        font-size: 2em;
+        
+    }
+    
+    .img-destacados{
+        display: flex;
+        gap: 10px;
+    } 
+    
+    .destacado-camisa{
+        height: 300px;
+    }
+    .destacado-ropa-muejer{
+        height: 300px;
+    }
+    .destacado-ropa{
+        height: 300px;
+    }
+    
+    .destacado-camisa:hover{
+        filter: drop-shadow(1px 1px 8px);
+        
+    }
+    .destacado-ropa-muejer:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .destacado-ropa:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    
+    
+        /* estilo de footer */
+    footer{
+       padding: 15px;
+        margin: 50px;
+        font-size: 2em;
+        text-align: center;  
+    }
+    
+    .footer-h4{
+    padding-bottom:35px;
+    }
+    
+    .redes-inicio{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+        
+    /* imagenes productos */
+    
+    .img-prductos{
+        display: grid;
+       grid-template-columns:auto ;
+        grid-template-rows: auto ; 
+    grid-template-areas: 
+    "img-1 img-2 img-3 img-4"
+    "img-5 img-16 img-6 img-7"
+    "img-8 img-9 img-10 img-11"
+    "img-12 img-13 img-14 img-15";
+    gap: 20px;
+    justify-content: center;
+    
+    }
+    .img-1{
+       grid-area: img-1 ;
+       height: 85%;  
+    }
+    .img-2{
+        grid-area: img-2 ;
+        height: 85%;
+    }
+    .img-3{
+        grid-area: img-3 ;
+        height: 85%;
+    }
+    .img-4{
+        grid-area: img-4 ;
+        height: 85%;
+    }
+    .img-5{
+        grid-area: img-5 ;
+        height: 85%;
+    }
+    .img-6{
+        grid-area: img-6 ;
+        height: 85%;
+    }
+    .img-7{
+        grid-area: img-7 ;
+        height: 85%;
+    }
+    .img-8{
+        grid-area: img-8 ;
+        height: 85%;
+    }
+    .img-9{
+        grid-area: img-9 ;
+        height: 85%;
+    }
+    .img-10{
+        grid-area: img-10 ;
+        height: 85%;
+    }
+    .img-11{
+        grid-area: img-11 ;
+        height: 85%;
+    }
+    .img-12{
+        grid-area: img-12 ;
+        height: 85%;
+    }
+    .img-13{
+        grid-area: img-13 ;
+        height: 85%;
+    }
+    .img-14{
+        grid-area: img-14 ;
+        height: 85%;
+    }
+    .img-15{
+        grid-area: img-15 ; 
+        height: 85%;
+     }
+     .img-16{
+        grid-area: img-16 ;
+        height: 85%;
+     }
+    
+    /* nosotros */
+    
+    .nosotros-5{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nosotros-1{
+        display: flex;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .nosotros{
+    display: flex;
+        margin: 20px;
+        padding: 15px;
+        
+    }
+    
+    .video{
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+        margin: 30px;
+    }
+    
+    /* contacto */
+     
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      gap: 0.5px;
+    }
+    
+    /* Ingresar */
+    
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5px;
+    }
+    }
+       
+    @media (min-width: 0px) and (max-width: 600px){
+
+        /* reset */
+        *{
+            margin: 0;
+            padding: 0;
+        box-sizing: border-box;
+        }
+        
+        /* estilo de la letra */
+        h1, h3{
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.em;
+        } 
+
+        h1{
+            position: relative;
+            margin-top: 30px;
+            font-size: 1.0em;
+        }
+
+        h4{
+            font-size: 1em;
+        }
+
+        
+        .tienda-online{
+            font-size: 0.4em; 
+            position: relative;
+            bottom: 22px;
+            margin-right: 90px;
+        }
+        
+        .fashion{
+         position: relative;
+         right: 60px;
+        }
+        
+        /* fondo */
+        
+        .fondo{
+            background-image: url(../img/fondo.jpg);
+            height: 2950px;
+        }
+        
+        /* menu principal */
+        
+        header{
+          background-color:rgb(245, 255, 250);
+            display: flex;
+            justify-content:  space-between;
+            padding: 30px;
+            background-image: url(../img/perchero.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat round;
+            height: 150px;
+        }
+      
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        .estilo-1:hover{
+            background-color:#caaf99;
+            border-radius: 15px;
+            padding: 5px;
+            box-shadow: 10px 5px 20px;
+        }
+        
+    .menu-1{background-color:#caaf99;
+        border-radius: 15px;
+        padding: 8px;
+       margin-top: 8px;
+     }
+            
+        /* estilo categoria */
+        
+        .categoria{
+        text-align: center;
+            font-size: 2em;
+            padding: 40px;
+        }
+        
+        .hombre-o-mujer{
+            margin: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly
+        }
+         
+        .hombre-p, .mujer-p{
+            font-size: 1.2em;
+           margin: 15px;
+        }
+        
+        /* categoria imagen */
+        
+        .img-categoria-1:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .img-categoria-2:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        
+        .contenedor-categoria{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows:auto ;
+            grid-template-areas: 
+            "img-categoria-1 img-categoria-2"
+            "hombre-p mujer-p";
+            justify-items: center;
+            text-align: center;
+           
+        }
+        .img-categoria-1{
+            grid-area:img-categoria-1 ;
+            height: 70%;
+            width: 70%;
+        }
+        
+        .img-categoria-2{
+            grid-area: img-categoria-2;
+            height: 70%;
+            width: 70%;
+        }
+        
+        .hombre-p{
+            grid-area: hombre-p; 
+        }
+        
+        .mujer-p{
+            grid-area: mujer-p;  
+        }
+        
+        /* estilo destacados */
+        
+        .destacados{
+            margin: 50px;
+            font-size: 2em;
+        }
+        
+        .img-destacados{
+            display: flex;
+            gap: 10px;
+        }
+        
+        .destacado-camisa{
+            height: 150px;
+        }
+    
+        .destacado-ropa-muejer{
+            height: 150px;
+        }
+        .destacado-ropa{
+            height: 150px;
+        }
+        
+        .destacado-camisa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa-muejer:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        
+        
+            /* estilo de footer */
+        footer{
+           padding: 15px;
+            margin: 50px;
+            font-size: 2em;
+            text-align: center;  
+        }
+        
+        .footer-h4{
+        padding-bottom:35px;
+        }
+        
+        .redes-inicio{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+        }
+            
+        /* imagenes productos */
+        
+        .img-prductos{
+            display: grid;
+           grid-template-columns:auto ;
+            grid-template-rows: auto ; 
+        grid-template-areas: 
+        "img-1 img-2"
+        "img-3 img-4"
+        "img-5 img-6"
+        "img-7 img-8"
+        "img-9 img-10"
+        "img-11 img-12"
+        "img-13 img-14"
+        "img-15 img-16";
+        gap: 20px;
+        justify-content: center;
+        
+        }
+        .img-1{
+           grid-area: img-1 ;
+           height: 85%;  
+        }
+        .img-2{
+            grid-area: img-2 ;
+            height: 85%;
+        }
+        .img-3{
+            grid-area: img-3 ;
+            height: 85%;
+        }
+        .img-4{
+            grid-area: img-4 ;
+            height: 85%;
+        }
+        .img-5{
+            grid-area: img-5 ;
+            height: 85%;
+        }
+        .img-6{
+            grid-area: img-6 ;
+            height: 85%;
+        }
+        .img-7{
+            grid-area: img-7 ;
+            height: 85%;
+        }
+        .img-8{
+            grid-area: img-8 ;
+            height: 85%;
+        }
+        .img-9{
+            grid-area: img-9 ;
+            height: 85%;
+        }
+        .img-10{
+            grid-area: img-10 ;
+            height: 85%;
+        }
+        .img-11{
+            grid-area: img-11 ;
+            height: 85%;
+        }
+        .img-12{
+            grid-area: img-12 ;
+            height: 85%;
+        }
+        .img-13{
+            grid-area: img-13 ;
+            height: 85%;
+        }
+        .img-14{
+            grid-area: img-14 ;
+            height: 85%;
+        }
+        .img-15{
+            grid-area: img-15 ; 
+            height: 85%;
+         }
+         .img-16{
+            grid-area: img-16 ;
+            height: 85%;
+         }
+        /* nosotros */
+        
+        .nosotros-5{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nosotros-1{
+            display: flex;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .nosotros{
+        display: flex;
+            margin: 20px;
+            padding: 15px;
+            
+        }
+        
+        .video{
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            margin: 30px;
+        }
+        
+        /* contacto */
+         
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          gap: 0.5px;
+        }
+        
+        /* Ingresar */
+        
+        .formulario{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5px;
+        }
+        }
+           
