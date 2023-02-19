@@ -1,0 +1,21 @@
+// reset 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// import
+@import "./scss/page-scss/inicio";
+@import "./scss/page-scss/productos";
+@import "./scss/page-scss/nosotros";
+@import "./page-scss/ingresar";
+@import "./page-scss/contacto";
+
+// letra del body
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+

@@ -1,0 +1,58 @@
+
+// estrutura de ingresar
+/* estructura de ingresar  */
+
+.contacto-page{
+    section{
+    h2{
+        @extend %clase-h;
+    }    
+}
+.contacto-1{
+    display: flex;
+    justify-content: center;
+    .contacto-2{
+        background-color:$color-1;
+    }
+    .contacto-boton{
+        .contacto-boton-1{
+            background-color:$color-2;
+            color:$color-3;
+            border-color: $color-3;
+        }
+        .contacto-boton-2{
+            background-color:$color-2;
+            color:$color-3;
+            border-color: $color-3;
+        }
+    }
+}
+}
+
+ // media query para celular
+  /*  media query para celular */
+
+  @media (min-width: 0px) and (max-width: 600px){
+    .contacto-page{
+    .contacto-1{
+        display: flex;
+        justify-content: center;
+        margin-top: 55px;
+        .contacto-2{
+            background-color:$color-1;
+        }
+        .contacto-boton{
+            .contacto-boton-1{
+                background-color:$color-2;
+                color:$color-3;
+                border-color: $color-3;
+            }
+            .contacto-boton-2{
+                background-color:$color-2;
+                color:$color-3;
+                border-color: $color-3;
+            }
+    }
+    }
+  }
+   }

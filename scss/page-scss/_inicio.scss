@@ -1,0 +1,514 @@
+// impor
+@import "../utilidades/extend";
+@import "../utilidades/mixins";
+@import "../utilidades/variables";
+
+//estilo del encabezado
+
+header{
+    background-color:$color-1;
+        display: flex;
+        justify-content:  space-between;
+        padding: 30px;
+        background-image: url(../img/perchero.jpg);
+        height: 400px;
+        background-repeat:  round;
+    div{
+        h1{
+            margin-top: 150px;
+            font-size: 4em;
+            font-family: 'Roboto', sans-serif;
+            font-size: 3em;
+    .fashion{
+        display: flex;
+    height: 20px;
+margin-left: 60px;
+align-items: center;
+    }
+    a{
+        text-decoration: none;
+    color: $color-3;
+    }
+        }
+    }
+    div{
+        .tienda-online{
+            font-size: 1.6em;
+        }
+    }
+    /* estilo de menu */
+    // estilo de menu
+    section{
+        nav{
+        font-size: 1.1em;   
+        }
+    }
+ }
+
+ main {
+      background-image: url(../img/fondo.png);
+      height: 100%;
+    section{
+        div{
+            h2{
+                @extend %clase-h;   }
+        }
+    }
+
+// imagenes de categoria
+/* imagenes de categoria */
+section{
+    .contenedor-categoria{
+        @include grid;
+        grid-template-areas: 
+    "img-categoria-1 img-categoria-2"
+    "hombre-p mujer-p";
+    justify-items: center;
+    text-align: center;
+    }
+    .img-categoria-1{
+        grid-area:img-categoria-1 ;
+    }
+    
+    .img-categoria-2{
+        grid-area: img-categoria-2;
+    }
+    
+    .hombre-p{
+        grid-area: hombre-p; 
+    }
+    
+    .mujer-p{
+        grid-area: mujer-p;  
+    }
+    .img-categoria-1:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .img-categoria-2:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .hombre-p, .mujer-p{
+        font-size: 2em;
+       margin: 15px;
+    }
+}
+ 
+
+ // imagenes de destacados
+ /* imagenes de destacados */
+
+ section{
+    div{
+        h3{
+            @extend %clase-h;
+        }
+    }
+    section{
+        .destacados{
+            margin: 50px;
+            font-size: 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly
+        }
+        
+        .destacado-camisa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa-muejer:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        
+        .img-destacados{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly
+        }
+    }
+ }
+
+// pie de pagina
+/* pie de pagina */
+
+.footer-1{
+    .footer-2{
+    h4{
+        padding: 50px;
+text-align: center;
+        padding-bottom:35px;
+        font-size: 2em;
+    }
+}
+.footer-3{
+    display: flex;
+   gap: 20px;
+   justify-content: center;
+   padding-bottom: 35px;
+   .estilo-1:hover{
+    background-color:$color-1;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 10px 5px 20px;
+    transition: 0.6s all;
+    color:$color-3;
+ }
+}
+}
+  }
+
+  // media query para tablet
+  /*  media query para tablet */
+
+  @media (min-width: 601px) and (max-width: 991.98px){
+
+    header{
+        background-color:$color-1;
+        display: flex;
+        justify-content:  space-between;
+        padding: 30px;
+        background-image: url(../img/perchero.jpg);
+        background-size:cover;
+        height: 280px;
+        div{
+            h1{
+                position: relative;
+                margin-top: 100px;
+                font-size: 2em;
+        .fashion{
+            display: flex;
+            height: 20px;
+        margin-top: px;
+        margin-left: 25px
+        }
+        a{
+        text-decoration: none;
+        color: $color-3;
+        }
+            }
+        }
+        div{
+            .tienda-online{
+                font-size: 1.4em;  
+                position: relative;
+                bottom: 8px;
+                margin-right: 90px;
+            }
+        }
+        /* estilo de menu */
+        // estilo de menu
+        section{
+            .navbar{
+                margin-top: 38px;
+                .fluid{
+                background-color: $color-1;
+        border-radius: 15px;
+       margin-top: 8px;
+      .nav-item{
+        text-align: center;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+            }
+        }
+        }
+     }
+   
+    
+     main{
+       background-image: url(../img/fondo.png);
+    
+    // imagenes de categoria
+    /* imagenes de categoria */
+    section{
+      .contenedor-categoria{
+          @include grid;
+          grid-template-areas: 
+      "img-categoria-1 img-categoria-2"
+      "hombre-p mujer-p";
+      justify-items: center;
+      text-align: center;
+      }
+      .img-categoria-1{
+          grid-area:img-categoria-1 ;
+          width: 300px;
+      }
+      
+      .img-categoria-2{
+          grid-area: img-categoria-2;
+          width: 300px;
+      }
+      
+      .hombre-p{
+          grid-area: hombre-p; 
+      }
+      
+      .mujer-p{
+          grid-area: mujer-p;  
+      }
+    
+      .img-categoria-1:hover{
+          filter: drop-shadow(1px 1px 8px);
+      }
+      .img-categoria-2:hover{
+          filter: drop-shadow(1px 1px 8px);
+      }
+      .hombre-p, .mujer-p{
+          font-size: 2em;
+         margin: 15px;
+      }
+    }
+}
+  
+
+// imagenes de destacados
+ /* imagenes de destacados */
+
+ section{
+    section{
+        .destacados{
+            margin: 50px;
+            font-size: 2em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly
+        }
+        
+        .destacado-camisa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa-muejer:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-ropa:hover{
+            filter: drop-shadow(1px 1px 8px);
+        }
+        .destacado-camisa{
+            height: 300px;
+        }
+        .destacado-ropa-muejer{
+            height: 300px;
+        }
+        .destacado-ropa{
+            height: 300px;
+        }
+        
+        .img-destacados{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly
+        }
+    }
+}
+    // pie de pagina
+/* pie de pagina */
+
+.footer-1{
+    .footer-2{
+    h4{
+        padding: 50px;
+text-align: center;
+        padding-bottom:35px;
+        font-size: 2em;
+    }
+}
+.footer-3{
+    display: flex;
+   gap: 20px;
+   justify-content: center;
+   padding-bottom: 35px;
+   .estilo-1:hover{
+    background-color:#caaf99;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 10px 5px 20px;
+    transition: 0.6s all;
+    color: $color-3;
+ }
+}
+}
+ }
+
+  // media query para celular
+  /*  media query para celular */
+
+ @media (min-width: 0px) and (max-width: 600px){
+
+    header{
+        background-color:$color-1;
+            display: flex;
+            justify-content:  space-between;
+            padding: 30px;
+            background-image: url(../img/perchero.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat round;
+            height: 150px;
+        div{
+            h1{
+                position: relative;
+            margin-top: 30px;
+            font-size: 1em;
+        .fashion{
+            position: relative;
+            right: 60px;
+        }
+        a{
+        text-decoration: none;
+        color: $color-3;
+        }
+            }
+        }
+        div{
+            .tienda-online{
+                font-size: 0.5em; 
+                position: relative;
+                bottom: 22px;
+                margin-right: 90px;
+            }
+        }
+        /* estilo de menu */
+        // estilo de menu
+        section{
+            .navbar{
+                .fluid{
+                    margin: 10px;
+                background-color: $color-1;
+        border-radius: 15px;
+       margin-top: 8px;
+      .nav-item{
+        text-align: center;
+    }
+            }
+        }
+        }
+     }
+   
+    
+     main{
+        .fondo{ 
+        background-image: url(../img/fondo.png);
+    }
+       section{
+        div{
+            h2{
+                font-size: 2em;
+            }
+        }
+       }
+    // imagenes de categoria
+    /* imagenes de categoria */
+    section{
+      .contenedor-categoria{
+          @include grid;
+          grid-template-areas: 
+      "img-categoria-1" 
+      "hombre-p"
+      "img-categoria-2"
+      " mujer-p";
+      justify-items: center;
+      text-align: center;
+      }
+      .img-categoria-1{
+          grid-area:img-categoria-1 ;
+          height: 75%;
+            width: 75%;
+      }
+      
+      .img-categoria-2{
+          grid-area: img-categoria-2;
+          height: 75%;
+          width: 75%;
+          
+      }
+      
+      .hombre-p{
+          grid-area: hombre-p;
+      }
+      
+      .mujer-p{
+          grid-area: mujer-p;  
+      }
+    
+      .img-categoria-1:hover{
+          filter: drop-shadow(1px 1px 8px);
+      }
+      .img-categoria-2:hover{
+          filter: drop-shadow(1px 1px 8px);
+      }
+      .hombre-p, .mujer-p{
+        font-size: 1.5em;
+      }
+    }
+}
+  
+
+// imagenes de destacados
+ /* imagenes de destacados */
+
+ .destacado-inicio{ 
+   
+    .img-destacados{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2em;
+        
+    }
+
+    .destacado-camisa:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .destacado-ropa-muejer:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .destacado-ropa:hover{
+        filter: drop-shadow(1px 1px 8px);
+    }
+    .destacado-camisa{
+        height: 55%;
+        width: 55%;
+    }
+    .destacado-ropa-muejer{
+        height: 55%;
+        width: 55%;
+    }
+    .destacado-ropa{
+        height: 55%;
+        width: 55%;
+    }
+    
+    .img-destacados{
+        gap: 30px;
+    }
+}
+    // pie de pagina
+/* pie de pagina */
+
+.footer-1{
+    .footer-2{
+    h4{
+        padding: 50px;
+text-align: center;
+        padding-bottom:35px;
+        font-size: 2em;
+    }
+}
+.footer-3{
+    display: flex;
+   gap: 20px;
+   justify-content: center;
+   padding-bottom: 35px;
+   .estilo-1:hover{
+    background-color:$color-1;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 10px 5px 20px;
+    transition: 0.6s all;
+    color:$color-3;
+ }
+}
+}
+ }
+ 

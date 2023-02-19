@@ -1,0 +1,125 @@
+
+// estrutura de ingresar
+/* estructura de ingresar  */
+
+.ingresar{
+    section{
+        h2{
+            @extend %clase-h;
+        }
+    }
+    .ingresar-1{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        .ingresar-5{
+            background-color:$color-1;
+          padding-bottom: 20px;
+        }
+        .btn-ingresar{
+            background-color:$color-2;
+            color:$color-3;
+        }
+    }
+    .ingresar-2{
+        %clase-flex
+        .ingresar-4{
+        text-align:left; 
+    }
+    }
+    .ingresar-3{
+        margin: 15px;
+        .ingresar-estilo{
+            text-decoration: none;
+            color:$color-3;
+            
+        }
+        
+    }
+}
+
+
+ // media query para tablet
+  /*  media query para tablet */
+
+  @media (min-width: 601px) and (max-width: 991.98px){
+
+    .ingresar{
+        section{
+            h2{
+                text-align: center;
+                font-size: 2em;
+                padding: 40px; 
+            }
+        }
+        .ingresar-1{
+            display: flex;
+        justify-content: center;
+            text-align: center;
+            .ingresar-5{
+                background-color:$color-1;
+               padding-bottom: 20px;
+            }
+        }
+        .ingresar-2{
+            display: flex;
+            justify-content: center;
+            .ingresar-4{
+            text-align:left; 
+        }
+        }
+        .ingresar-3{
+            margin: 15px;
+            .ingresar-estilo{
+                text-decoration: none;
+                color: $color-3;
+                
+            }
+            
+        }
+    }
+  }
+
+  // media query para celular
+  /*  media query para celular */
+
+ @media (min-width: 0px) and (max-width: 600px){
+
+    .ingresar{
+        section{
+            h2{
+                text-align: center;
+                font-size: 2em;
+                padding: 40px; 
+            }
+        }
+        .ingresar-1{
+        display: flex;
+        justify-content: center;
+        margin-top: 55px;
+       
+            text-align: center;
+            .ingresar-5{
+                background-color:$color-1;
+               padding-bottom: 20px;
+            }
+        }
+        .ingresar-2{
+            display: flex;
+            justify-content: center;
+            .ingresar-4{
+            text-align:left; 
+        }
+        }
+        .ingresar-3{
+            margin: 15px;
+            .ingresar-estilo{
+                text-decoration: none;
+                color: $color-3;
+                
+            }
+            
+        }
+    }
+  }
+ 

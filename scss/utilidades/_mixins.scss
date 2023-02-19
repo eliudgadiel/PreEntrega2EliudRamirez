@@ -1,0 +1,11 @@
+// estilos para grid
+
+@mixin grid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:auto ;
+}
+
+@mixin img{
+   height: 85%; 
+}
