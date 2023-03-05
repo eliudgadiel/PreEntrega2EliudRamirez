@@ -46,8 +46,9 @@ align-items: center;
  }
 
  main {
-      background-image: url(../img/fondo.png);
-      height: 100%;
+      background-image: url(../img/main-fondo.png);
+     
+      
     section{
         div{
             h2{
@@ -83,9 +84,11 @@ section{
     }
     .img-categoria-1:hover{
         filter: drop-shadow(1px 1px 8px);
+        color: black;
     }
     .img-categoria-2:hover{
         filter: drop-shadow(1px 1px 8px);
+        color: black;
     }
     .hombre-p, .mujer-p{
         font-size: 2em;
@@ -218,7 +221,7 @@ text-align: center;
    
     
      main{
-       background-image: url(../img/fondo.png);
+       background-image: url(../img/main-fondo.png);
     
     // imagenes de categoria
     /* imagenes de categoria */
@@ -388,7 +391,7 @@ text-align: center;
     
      main{
         .fondo{ 
-        background-image: url(../img/fondo.png);
+        background-image: url(../img/main-fondo.png);
     }
        section{
         div{

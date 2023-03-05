@@ -9,15 +9,21 @@
      .productos-1{
         @include grid;
         grid-template-areas:
+        "carousel carousel carousel carousel"
         "img-1 img-2 img-3 img-4"
         "img-5 img-6 img-7 img-8"
        "img-9 img-10 img-11 img-12"
      "img-13 img-14 img-15 img-16";
 gap: 30px;
 justify-content: center;
+
+.carousel-1{
+   height: 310px;
+}
     }
+
     .img-1{
-        grid-area: img-1 ;  
+        grid-area: img-1 ;
      }
      .img-2{
          grid-area: img-2 ;
@@ -62,7 +68,10 @@ justify-content: center;
          grid-area: img-15 ; 
       }
       .img-16{
-         grid-area: img-16 ;
+         grid-area: img-16 ; 
+      }
+      .carousel{
+        grid-area: carousel;
       }
 }
 
@@ -79,17 +88,20 @@ justify-content: center;
          .productos-1{
             @include grid;
     grid-template-areas: 
+    "carousel carousel carousel carousel"
     "img-1 img-2 img-3 img-4"
     "img-5 img-6 img-7 img-8"
    "img-9 img-10 img-11 img-12"
  "img-13 img-14 img-15 img-16";
     gap: 20px;
     justify-content: center;
-    
+    .card{ width: 2rem;
+     }
+
     }
     .img-1{
        grid-area: img-1 ;
-       @include img;  
+       @include img; 
     }
     .img-2{
         grid-area: img-2 ;
@@ -151,6 +163,9 @@ justify-content: center;
         grid-area: img-16 ;
         @include img;
      }
+     .carousel{
+        grid-area: carousel;
+      }
   }
  }
 
@@ -169,6 +184,7 @@ justify-content: center;
      .productos-1{
             @include grid;
     grid-template-areas: 
+    "carousel carousel"
     "img-1 img-2"
         "img-3 img-4"
         "img-5 img-6"
@@ -245,5 +261,8 @@ justify-content: center;
             grid-area: img-16 ;
             height: 80%;
          }
- }
+         .carousel{
+            grid-area: carousel;
+          }
+        }
 }
