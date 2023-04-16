@@ -1,9 +1,12 @@
 # Look Fashion
 
-## JavaScript realice las consigna que pidieron para la primera entrega
+## Look Fashion es una Tienda Online para facilitar la compra del usuario.
 
-- Crear un  algoritmo con un condicional.
-- Crear un algoritmo utilizando un ciclo 
-- Armar un simulador interactivo, la estructura final de tu proyecto integrado
+- Al entrar al sitio Web solicita Tu nombre Para darle la Bienvenida la usuario. 
+- Mas adelante le facilita al usurio para adquir lo que anda buscando.
+- Mientras el usuario selecciona sus productos para asi hacer su compra, cuando finaliza le hace la suma de su compra asi le dice cuanto debe abonar y si tiene un descuento.
+- Despues tiene un sitio donde puede comprar al mayor despues de cierta cantidad de ropa.
+- Tambien cuenta con un buscador para asi facilita a un mas la busqueda del usuario.
+- Conteo de inventario, para que el usuario sepa si esta agotado o no.
 
-## Inicie con funcion preguntandole el nombre del usuario, y darle la bienvenido a mi pagina, dandole informacion de que tiene descuesto, mas adelante le pregunto que tipo de ropa busca con un ciclo, asi le facilito un poco la busqueda. despues que encuentra lo que busca, realiza su compra la clculo  con flujo. Y le doy las gracias por su compra y que vuelva. use alert, console.log, parseInt, prompt y  toUpperCase.
+
