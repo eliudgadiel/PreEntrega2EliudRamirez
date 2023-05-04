@@ -1,75 +1,93 @@
-
- // inicio de la pagina
- 
-function bienvenida() {
-  let nombre =  prompt("¿Cómo te llamas?");
-  alert("Bienvenido " + nombre.toUpperCase() + " a Look Fashion estamos en el mes de descuento. Comprando 3 o Mas Productos hay un 10% off ");
-  console.log(nombre);
-}
-bienvenida();
-
-
-// Definir la clase Producto
-class Producto {
-  constructor(nombre, precio) {
-    this.nombre = nombre.toUpperCase();
-    this.precio = precio;
+window.addEventListener("load", () => {
+  const ProductosDeCompra = document.querySelector(".Productos-tabla");
+  const tablaGuardada = localStorage.getItem("tablaCarrito");
+  if (tablaGuardada) {
+    ProductosDeCompra.innerHTML = tablaGuardada;
   }
-}
-
-// Crear algunos productos
-const Catalogo = [
-  new Producto ("Short" , 802,25),
-  new Producto ("Camisa" , 1056,50),
-  new Producto ("Pantalon" , 1500,30),
-  new Producto ("Remera" , 960,29),
-  new Producto ("Buso" , 700,59),
-  new Producto ("Campera" , 2621,60),
-  new Producto ("Zapato" , 950,72),
-  new Producto ("Media" , 305,83),
-  new Producto ("Calza" , 520,98),
-  new Producto ("Bota" , 1003,13) 
-];
-
-// Array para los productos seleccionados
-
-const carrito = [];
-
-// Función para buscar un producto en el catálogo
-
-function buscarProducto(nombre) {
-  return Catalogo.find(producto => producto.nombre === nombre);
-}
-
-// Ciclo para que el usuario seleccione los productos
-let comprar = "SI";
-while (comprar.toLocaleUpperCase() !== "NO") {
-  const nombreProducto = prompt("Ingrese el nombre del producto que desea agregar al carrito: ").toUpperCase();
-  const producto = buscarProducto(nombreProducto);
-  if (producto) {
-    carrito.push(producto);
-    alert(producto.nombre + " ha sido agregado al carrito ");
-  } else {
-    alert("No se ha encontrado el producto " + nombreProducto);
-  }
-  comprar = prompt("¿Desea agregar otro producto al carrito SI/NO?");
-  console.log(nombreProducto)
-}
-
-// Calcular el total y el descuento de la compra
-// Aplicar un 10% de descuento si se compran 3 o más productos
-let total = 0;
-carrito.forEach(producto => {
-  total += producto.precio;
 });
-let descuento = 0;
-if (carrito.length >= 3) {
-  descuento = total * 0.1; 
+
+ const botonCompra = document.querySelectorAll(".boton-compra")
+
+ // el carrito
+ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+console.log(carrito);
+
+botonCompra.forEach(CarroBoton => {
+  CarroBoton.addEventListener("click", clickBoton);
+});
+
+const ProductosDeCompra = document.querySelector(".Productos-tabla");
+
+// Aplico Evento 
+ 
+function clickBoton(event) {
+  const boton = event.target;
+  const item = boton.closest(".producto");
+  const itemTitulo = item.querySelector(".producto-titulo").textContent;
+  const itemPrecio = item.querySelector(".precio").textContent;
+  itemCompra(itemTitulo, itemPrecio)
 }
-const totalConDescuento = total - descuento;
-console.log(totalConDescuento);
-// Mostrar información de la compra
-alert("Los productos seleccionados son: " + carrito.map(producto => producto.nombre).join(", ") +
-" El total es: " + total +
-" El descuento aplicado es: " + descuento +
-" El total con descuento es: " + totalConDescuento);
+
+// Aplico el DOM
+
+function itemCompra(itemTitulo, itemPrecio){
+const tablaDeCompra = document.createElement("tr");
+const contenidoCompra = `
+<tr>
+<th class="Titulo-Compra" scope="row">${itemTitulo}</th>
+<td class="precio">${itemPrecio}</td>
+<td class="Cantidades"><input type="number" class="cantidad" value="1"></td>
+<td><button class="eliminar-btn">Eliminar</button></td>
+</tr>
+`;
+tablaDeCompra.innerHTML = contenidoCompra;
+ProductosDeCompra.append(tablaDeCompra);
+
+carrito.push({
+  titulo: itemTitulo,
+  precio: itemPrecio
+});
+saveLocal();
+ totalDeCompra(); 
+
+ const eliminarBtn = tablaDeCompra.querySelector(".eliminar-btn");
+ eliminarBtn.addEventListener("click", () => {
+   eliminarProducto(itemTitulo);
+}); 
+}
+
+// suma de los prodcutos de la compra
+ function totalDeCompra(){
+  let total = 0;
+  compraTotal = document.querySelector(".compra-Total");
+  
+  const todosLosProductos = document.querySelectorAll(".Productos-tabla");
+  
+  todosLosProductos.forEach((todosLosProducto) => {
+  const precioDeCadaUno = todosLosProducto.querySelector(".precio");
+ 
+  const SoloPRecio = Number(precioDeCadaUno.textContent.replace("$",""));
+
+  const cantidadDeProductos = todosLosProducto.querySelector(".cantidad");
+
+ const cantidadResultado = Number(cantidadDeProductos.value);
+total = total + SoloPRecio * cantidadResultado;
+
+compraTotal.textContent = `$${total.toFixed(2)}`;
+  });
+ 
+};
+
+//Guardar en el local Storage 
+
+ const saveLocal = () => {
+  localStorage.setItem("carrito", JSON.stringify (carrito));
+  localStorage.setItem("tablaCarrito", ProductosDeCompra.innerHTML);
+}; 
+
+
+
+
+
+

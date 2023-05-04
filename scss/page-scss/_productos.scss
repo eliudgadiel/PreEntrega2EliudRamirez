@@ -3,7 +3,7 @@
 /* estructura de pruductos  */
 
  .productos-page{
-         h2{
+         h2,h3{
             @extend %clase-h;
     }
      .productos-1{
@@ -20,59 +20,117 @@ justify-content: center;
 .carousel-1{
    height: 310px;
 }
-    }
 
-    .img-1{
+    }
+    
+
+    .img-1:hover{
         grid-area: img-1 ;
+        filter: drop-shadow(1px 1px 8px);
+        color: black;
      }
-     .img-2{
+     .img-2:hover{
          grid-area: img-2 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
+         
      }
-     .img-3{
+     .img-3:hover{
          grid-area: img-3 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-4{
+     .img-4:hover{
          grid-area: img-4 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-5{
+     .img-5:hover{
          grid-area: img-5 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-6{
+     .img-6:hover{
          grid-area: img-6 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-7{
+     .img-7:hover{
          grid-area: img-7 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-8{
+     .img-8:hover{
          grid-area: img-8 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-9{
+     .img-9:hover{
          grid-area: img-9 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-10{
+     .img-10:hover{
          grid-area: img-10 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-11{
+     .img-11:hover{
          grid-area: img-11 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-12{
+     .img-12:hover{
          grid-area: img-12 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-13{
+     .img-13:hover{
          grid-area: img-13 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-14{
+     .img-14:hover{
          grid-area: img-14 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
      }
-     .img-15{
+     .img-15:hover{
          grid-area: img-15 ; 
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
       }
-      .img-16{
-         grid-area: img-16 ; 
+      .img-16:hover{
+         grid-area: img-16 ;
+         filter: drop-shadow(1px 1px 8px);
+         color: black;
       }
       .carousel{
         grid-area: carousel;
       }
+      .card{
+        text-align: center;
+      }
+      .boton-compra{
+        cursor: pointer;
+        padding: 0.50rem;
+        margin: 0.80rem;
+      }
+      
+      .tabla-Compra,.Cantidad{
+        margin-left: 350px;
+       
+      }
+      .boton-Pagar{
+        margin-top: 20px;
+        display: flex;
+       justify-content: center;
+       .Total{
+        font-size: 1.25rem;
+        margin-left: 135px;
+       }
+        
+    }
 }
 
     // media query para tablet

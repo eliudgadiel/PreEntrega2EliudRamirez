@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box; }
 
-main section div h2, main section div h3, .productos-page h2, .nosotros-page .nosotros-1 .nosotros-2 h2, .ingresar section h2, .contacto-page section h2 {
+main section div h2, main section div h3, .productos-page h2, .productos-page h3, .nosotros-page .nosotros-1 .nosotros-2 h2, .ingresar section h2, .contacto-page section h2 {
   text-align: center;
   font-size: 2em;
   padding: 40px; }
@@ -44,7 +44,8 @@ main {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "img-categoria-1 img-categoria-2" "hombre-p mujer-p";
+    grid-template-areas: "img-categoria-1 img-categoria-2"
+ "hombre-p mujer-p";
     justify-items: center;
     text-align: center; }
   main section .img-categoria-1 {
@@ -143,7 +144,8 @@ main {
       display: grid;
       grid-template-columns: auto;
       grid-template-rows: auto;
-      grid-template-areas: "img-categoria-1 img-categoria-2" "hombre-p mujer-p";
+      grid-template-areas: "img-categoria-1 img-categoria-2"
+ "hombre-p mujer-p";
       justify-items: center;
       text-align: center; }
     main section .img-categoria-1 {
@@ -249,7 +251,10 @@ main {
       display: grid;
       grid-template-columns: auto;
       grid-template-rows: auto;
-      grid-template-areas: "img-categoria-1"  "hombre-p" "img-categoria-2" " mujer-p";
+      grid-template-areas: "img-categoria-1" 
+ "hombre-p"
+ "img-categoria-2"
+ " mujer-p";
       justify-items: center;
       text-align: center; }
     main section .img-categoria-1 {
@@ -317,62 +322,117 @@ main {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-template-areas: "carousel carousel carousel carousel" "img-1 img-2 img-3 img-4" "img-5 img-6 img-7 img-8" "img-9 img-10 img-11 img-12" "img-13 img-14 img-15 img-16";
+  grid-template-areas: "carousel carousel carousel carousel"
+ "img-1 img-2 img-3 img-4"
+ "img-5 img-6 img-7 img-8"
+ "img-9 img-10 img-11 img-12"
+ "img-13 img-14 img-15 img-16";
   gap: 30px;
   justify-content: center; }
   .productos-page .productos-1 .carousel-1 {
     height: 310px; }
 
-.productos-page .img-1 {
-  grid-area: img-1; }
+.productos-page .img-1:hover {
+  grid-area: img-1;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-2 {
-  grid-area: img-2; }
+.productos-page .img-2:hover {
+  grid-area: img-2;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-3 {
-  grid-area: img-3; }
+.productos-page .img-3:hover {
+  grid-area: img-3;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-4 {
-  grid-area: img-4; }
+.productos-page .img-4:hover {
+  grid-area: img-4;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-5 {
-  grid-area: img-5; }
+.productos-page .img-5:hover {
+  grid-area: img-5;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-6 {
-  grid-area: img-6; }
+.productos-page .img-6:hover {
+  grid-area: img-6;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-7 {
-  grid-area: img-7; }
+.productos-page .img-7:hover {
+  grid-area: img-7;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-8 {
-  grid-area: img-8; }
+.productos-page .img-8:hover {
+  grid-area: img-8;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-9 {
-  grid-area: img-9; }
+.productos-page .img-9:hover {
+  grid-area: img-9;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-10 {
-  grid-area: img-10; }
+.productos-page .img-10:hover {
+  grid-area: img-10;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-11 {
-  grid-area: img-11; }
+.productos-page .img-11:hover {
+  grid-area: img-11;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-12 {
-  grid-area: img-12; }
+.productos-page .img-12:hover {
+  grid-area: img-12;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-13 {
-  grid-area: img-13; }
+.productos-page .img-13:hover {
+  grid-area: img-13;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-14 {
-  grid-area: img-14; }
+.productos-page .img-14:hover {
+  grid-area: img-14;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-15 {
-  grid-area: img-15; }
+.productos-page .img-15:hover {
+  grid-area: img-15;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
-.productos-page .img-16 {
-  grid-area: img-16; }
+.productos-page .img-16:hover {
+  grid-area: img-16;
+  filter: drop-shadow(1px 1px 8px);
+  color: black; }
 
 .productos-page .carousel {
   grid-area: carousel; }
+
+.productos-page .card {
+  text-align: center; }
+
+.productos-page .boton-compra {
+  cursor: pointer;
+  padding: 0.50rem;
+  margin: 0.80rem; }
+
+.productos-page .tabla-Compra, .productos-page .Cantidad {
+  margin-left: 350px; }
+
+.productos-page .boton-Pagar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; }
+  .productos-page .boton-Pagar .Total {
+    font-size: 1.25rem;
+    margin-left: 135px; }
 
 /*  media query para tablet */
 @media (min-width: 601px) and (max-width: 991.98px) {
@@ -384,7 +444,11 @@ main {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "carousel carousel carousel carousel" "img-1 img-2 img-3 img-4" "img-5 img-6 img-7 img-8" "img-9 img-10 img-11 img-12" "img-13 img-14 img-15 img-16";
+    grid-template-areas: "carousel carousel carousel carousel"
+ "img-1 img-2 img-3 img-4"
+ "img-5 img-6 img-7 img-8"
+ "img-9 img-10 img-11 img-12"
+ "img-13 img-14 img-15 img-16";
     gap: 20px;
     justify-content: center; }
     .productos-page .productos-1 .card {
@@ -450,7 +514,15 @@ main {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "carousel carousel" "img-1 img-2" "img-3 img-4" "img-5 img-6" "img-7 img-8" "img-9 img-10" "img-11 img-12" "img-13 img-14" "img-15 img-16";
+    grid-template-areas: "carousel carousel"
+ "img-1 img-2"
+ "img-3 img-4"
+ "img-5 img-6"
+ "img-7 img-8"
+ "img-9 img-10"
+ "img-11 img-12"
+ "img-13 img-14"
+ "img-15 img-16";
     gap: 20px;
     justify-content: center; }
   .productos-page .img-1 {
@@ -652,3 +724,8 @@ main {
 
 body {
   font-family: 'Roboto', sans-serif; }
+.container-icon{
+  width: 30%;
+  margin-top: 800px;
+  margin-left: 200px;
+}
