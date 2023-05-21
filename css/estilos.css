@@ -729,3 +729,60 @@ body {
   margin-top: 800px;
   margin-left: 200px;
 }
+
+
+.submenu {
+  position: relative;
+  list-style: none;
+  width: 10%;
+ height: 10%;
+
+}
+.submenu #carrito-1{
+display: none;
+text-align: right;
+}
+
+ .img-carrito{
+  width: 60%;
+}
+
+.submenu:hover #carrito-1 {
+  display: block;
+  position: absolute;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  background-color:#4E4B5076;
+  padding: 40px;
+  min-width: 400px;
+  
+}
+
+table {
+  width: 100%;
+  
+}
+th, td{
+color: rgb(255, 250, 240);
+text-align: center;
+
+}
+th{
+  padding: 20px;
+  
+}
+.Total{
+  color: white;
+text-align: center;
+margin-top: 25px;
+font-size: 1.1em;
+}
+.btn-3{
+  cursor: pointer;
+}
+.borrar{
+  cursor: pointer;
+}
+.img-carrito{
+  cursor: pointer;
+}
