@@ -178,39 +178,49 @@ const order = () => {
   return message;
 };
 
+// Obtener usuarios desde la API
+async function obtenerUsuarios() {
+  try {
+    const response = await fetch(`${API_URL}/users`);
+    const users = await response.json();
+    return users;
+  } catch (error) {
+    console.error("Error al obtener los usuarios:", error);
+  }
+}
+
+// Obtener usuario aleatorio
 function obtenerUsuarioAleatorio(users) {
   const indiceAleatorio = Math.floor(Math.random() * users.length);
   return users[indiceAleatorio];
 }
 
-function procesarPago() {
-  // Realizar una solicitud fetch a la API para obtener los usuarios
-  fetch(`${API_URL}/users`)
-    .then((response) => response.json())
-    .then((users) => {
-      const usuario = obtenerUsuarioAleatorio(users);
-      const fecha = obtenerFecha();
-      const orderDetails = order();
+// Procesar el pago
+async function procesarPago() {
+  try {
+    const users = await obtenerUsuarios();
+    const usuario = obtenerUsuarioAleatorio(users);
+    const fecha = obtenerFecha();
+    const orderDetails = order();
 
-      Swal.fire({
-        icon: "success",
-        title: "Compra realizada con éxito",
-        html: `
-          Orden: ${orderDetails}
-          Nombre: ${usuario.name}<br>
-          Teléfono: ${usuario.phone}<br>
-          Correo: ${usuario.email}<br>
-          Ciudad: ${usuario.address.city}<br>
-          Fecha: ${fecha}
-        `,
-        didClose: () => {
-          vaciarCarrito();
-        },
-      });
-    })
-    .catch((error) => {
-      console.error("Error al obtener los usuarios:", error);
+    Swal.fire({
+      icon: "success",
+      title: "Compra realizada con éxito",
+      html: `
+        Orden: ${orderDetails}
+        Nombre: ${usuario.name}<br>
+        Teléfono: ${usuario.phone}<br>
+        Correo: ${usuario.email}<br>
+        Ciudad: ${usuario.address.city}<br>
+        Fecha: ${fecha}
+      `,
+      didClose: () => {
+        vaciarCarrito();
+      },
     });
+  } catch (error) {
+    console.error("Error al procesar el pago:", error);
+  }
 }
 
 // evento de pagar
