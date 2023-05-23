@@ -197,11 +197,11 @@ function procesarPago() {
         title: "Compra realizada con éxito",
         html: `
           Orden: ${orderDetails}
-          Fecha: ${fecha}<br>
           Nombre: ${usuario.name}<br>
           Teléfono: ${usuario.phone}<br>
           Correo: ${usuario.email}<br>
-          Ciudad: ${usuario.address.city}
+          Ciudad: ${usuario.address.city}<br>
+          Fecha: ${fecha}
         `,
         didClose: () => {
           vaciarCarrito();
