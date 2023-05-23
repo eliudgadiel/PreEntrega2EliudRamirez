@@ -1,5 +1,18 @@
+//API JSON URL
+const API_URL = "https://jsonplaceholder.typicode.com";
+
+//Guardar en el local Storage
+
+const saveLocal = () => {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("#lista-carrito tbody", lista.innerHTML);
+};
+
+const lista = document.querySelector("#lista-carrito tbody");
+//el carrito
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 window.addEventListener("load", () => {
-  const lista = document.querySelector("#lista-carrito tbody");
   let carritoGuardado = [];
   if (lista) {
     carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -11,12 +24,7 @@ window.addEventListener("load", () => {
   }
 });
 
-const lista = document.querySelector("#lista-carrito tbody");
-
 const botonCompra = document.querySelectorAll(".boton-compra");
-
-// el carrito
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 botonCompra.forEach((botonCompra) => {
   botonCompra.addEventListener("click", clickBoton);
@@ -58,15 +66,11 @@ function itemCompra(itemTitulo, itemPrecio, itemImg, itemId) {
     productoExistente.precio += itemPrecio;
     const filaExistente = document.querySelector(`#fila-${itemId}`);
     const cantidadElemento = filaExistente.querySelector(".cantidad");
-    const precioElemento = filaExistente.querySelector("#preCio");
+    const precioElemento = filaExistente.querySelector(".preCio");
 
     if (cantidadElemento && precioElemento) {
       cantidadElemento.textContent = productoExistente.cantidad;
       precioElemento.textContent = productoExistente.precio.toFixed(2);
-    } else {
-      console.log(
-        "No se encontró el elemento de cantidad o precio en la fila del carrito."
-      );
     }
   } else {
     const nuevoProducto = {
@@ -87,7 +91,6 @@ function itemCompra(itemTitulo, itemPrecio, itemImg, itemId) {
   saveLocal();
   totalDeCompra();
 
-  // Mostrar notificación de éxito
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -116,7 +119,7 @@ function crearFilaProducto(producto) {
     </td>
     <td>${producto.titulo}</td>
     <td class="cantidad">${producto.cantidad}</td>
-    <td id="preCio">${producto.precio}</td>
+    <td class="preCio">${producto.precio}</td>
     <td>
       <a href="#" class="borrar" data-id="${producto.id}">X</a>
     </td>
@@ -142,6 +145,30 @@ function totalDeCompra() {
   return total.toFixed(2);
 }
 
+// Importar la clase DateTime de Luxon
+const { DateTime } = luxon;
+
+// Obtener la fecha actual en el formato localizado
+function obtenerFecha() {
+  const fecha = DateTime.now()
+    .setLocale("es")
+    .toLocaleString(DateTime.DATE_FULL);
+  return fecha;
+}
+
+// Obtener usuarios desde la API
+function obtenerUsuarios() {
+  return fetch(`${API_URL}/users`)
+    .then((response) => response.json())
+    .then((users) => {
+      return users;
+    })
+    .catch((error) => {
+      console.error("Error al obtener los usuarios:", error);
+    });
+}
+
+// Obtener los detalles de la orden
 const order = () => {
   let message = "";
   carrito.forEach((e) => {
@@ -151,55 +178,44 @@ const order = () => {
   return message;
 };
 
-const checkOutFunction = () => {
-  if (carrito.length) {
-    const DateTime = luxon.DateTime;
-    const fecha = DateTime.now().setLocale("es").toLocaleString();
-    const totalCompra = totalDeCompra();
-    const ordenGenerada = order();
+function obtenerUsuarioAleatorio(users) {
+  const indiceAleatorio = Math.floor(Math.random() * users.length);
+  return users[indiceAleatorio];
+}
 
-    Swal.fire({
-      icon: "success",
-      title: "¡Éxito!",
-      html: `Su orden:\n${ordenGenerada} ha sido generada con éxito. \n`,
-      footer: `Fecha: ${fecha} - Precio total de su orden: $${totalCompra}`,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        solicitarCorreoElectronico();
-      }
+function procesarPago() {
+  // Realizar una solicitud fetch a la API para obtener los usuarios
+  fetch(`${API_URL}/users`)
+    .then((response) => response.json())
+    .then((users) => {
+      const usuario = obtenerUsuarioAleatorio(users);
+      const fecha = obtenerFecha();
+      const orderDetails = order();
+
+      Swal.fire({
+        icon: "success",
+        title: "Compra realizada con éxito",
+        html: `
+          Orden: ${orderDetails}
+          Fecha: ${fecha}<br>
+          Nombre: ${usuario.name}<br>
+          Teléfono: ${usuario.phone}<br>
+          Correo: ${usuario.email}<br>
+          Ciudad: ${usuario.address.city}
+        `,
+        didClose: () => {
+          vaciarCarrito();
+        },
+      });
+    })
+    .catch((error) => {
+      console.error("Error al obtener los usuarios:", error);
     });
+}
 
-    carrito = [];
-    saveLocal();
-    showCart();
-  } else {
-    Swal.fire({
-      icon: "error",
-      title: "No hay items en el carrito",
-      showConfirmButton: false,
-      timer: 3000,
-    });
-  }
-};
-
-const solicitarCorreoElectronico = async () => {
-  const { value: email } = await Swal.fire({
-    title: "Ingrese su dirección de correo electrónico",
-    input: "email",
-    inputLabel: "Dirección de correo electrónico",
-    inputPlaceholder: "Ingrese su correo electrónico",
-  });
-
-  if (email) {
-    Swal.fire({
-      icon: "success",
-      title: "¡Correo electrónico enviado!",
-      text: `Se ha enviado un correo electrónico a ${email} con los detalles de la compra.`,
-      showConfirmButton: false,
-      timer: 3000,
-    });
-  }
-};
+// evento de pagar
+const botonPagar = document.querySelector("#pagar");
+botonPagar.addEventListener("click", procesarPago);
 
 function showCart() {
   const lista = document.querySelector("#lista-carrito tbody");
@@ -224,7 +240,6 @@ function eliminarProducto(itemId) {
     filaEliminar.remove();
   }
 
-  // Actualizar el total de la compra
   totalDeCompra();
 
   const Toast = Swal.mixin({
@@ -245,17 +260,14 @@ function eliminarProducto(itemId) {
   });
 }
 
+// Vaciar el carrito
 function vaciarCarrito() {
-  // Vaciar el carrito
   carrito = [];
 
-  // Limpiar la lista en el DOM
   lista.innerHTML = "";
 
-  // Actualizar el almacenamiento local
   saveLocal();
 
-  // Actualizar el total de la compra
   totalDeCompra();
   const Toast = Swal.mixin({
     toast: true,
@@ -274,13 +286,3 @@ function vaciarCarrito() {
     title: "El Carrito Esta Vacio",
   });
 }
-
-//Guardar en el local Storage
-
-const saveLocal = () => {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  localStorage.setItem("#lista-carrito tbody", lista.innerHTML);
-};
-
-const botonPagar = document.querySelector("#pagar");
-botonPagar.addEventListener("click", checkOutFunction);
